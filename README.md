@@ -100,3 +100,6 @@ pytest churn_script_logging_and_tests.py
 - It helps developers to create great pull request descriptions that meets the organization's standards
 - pull_request_template.md contains a template which is used whenever new pull requirest is created and developers should
 fill in the details before asking anyone for the code review
+
+#### Pre-commit hook
+- .pre-commit-config.yaml includes what should happen before a successfull commit
