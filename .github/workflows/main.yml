@@ -53,7 +53,6 @@ jobs:
       - name: Prepare branch-based environment variables
         uses: iamtheyammer/branch-env-vars@v1.2.1
         with:
-          bevOverwrite: true
           S3_BUCKET: |
             main:development-app
             release:production-app
