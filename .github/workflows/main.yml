@@ -52,7 +52,7 @@ jobs:
 
       - name: Prepare Variables Based On Git Branch names
         uses: FranzDiebold/github-env-vars-action@v2
-        with: |
+        with:
           S3_BUCKET: |
             main: development-app
             release: production-app
