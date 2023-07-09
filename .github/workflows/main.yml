@@ -98,8 +98,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: [config, test]
     steps:
-      - name: Prepare Variables
-
       - name: Deploy to staging
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: |
