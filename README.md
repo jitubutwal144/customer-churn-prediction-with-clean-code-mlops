@@ -95,3 +95,8 @@ pytest churn_script_logging_and_tests.py
     - test        --> steps to test the project can be performed in this job eg. pylint and pytest activites
     - deploy          --> steps required to deploy project on multiple environments(test, staging, production etc) can be performed in this job
     - announcement          --> once deployement is successfull on production, we can notify people on certain notification channels eg. slack or jira or email
+
+#### Pull request template
+- It helps developers to create great pull request descriptions that meets the organization's standards
+- pull_request_template.md contains a template which is used whenever new pull requirest is created and developers should
+fill in the details before asking anyone for the code review
