@@ -87,3 +87,11 @@ we can use command ipython churn_library.py, to run the code below  __name__ == 
 It Contain unit tests for the churn_library.py functions. Used assert statements to test functions and make sure it work properly. Testing and logging can be completed on the command line i.e running the below code in the terminal should test each of the functions and provide any errors to a file stored in the /logs folder.
 
 pytest churn_script_logging_and_tests.py
+
+#### CICD pipeline
+- It includes github actions pipeline to deploy the project
+    - config        --> prepares and exports environment variables that can be used in different jobs
+    - build        --> steps required to build the project can be performed in this job, eg. compile, generate minified files etc
+    - test        --> steps to test the project can be performed in this job eg. pylint and pytest activites
+    - deploy          --> steps required to deploy project on multiple environments(test, staging, production etc) can be performed in this job
+    - announcement          --> once deployement is successfull on production, we can notify people on certain notification channels eg. slack or jira or email
