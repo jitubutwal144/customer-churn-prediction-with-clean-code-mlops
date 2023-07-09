@@ -1,0 +1,42 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+
+      - name: Install dependencies
+        run: pip install -r src/requirements.txt
+
+      - name: Run tests
+        run: echo 'Run pytest unit tests'
+
+      - name: Build and package
+        run: |
+          echo 'Build and package project'
+
+      - name: Deploy to staging
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: |
+          echo 'Deploy to staging environment'
+
+      - name: Deploy to production
+        if: github.ref == 'refs/tags/*' && github.event_name == 'push'
+        run: |
+          echo 'Deploy to production environment whenever new release tag is published'
