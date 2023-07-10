@@ -9,7 +9,7 @@ The project aims at predicting customer churn for banking customers. This is a c
 - Train two classification models (sklearn random forest and logistic regression) - Random forest has better performance than logistic regression in this case
 - Identify most important features influencing the predictions and visualize their impact using SHAP library
 - Save best models with their performance metrics
-- Use autopep8 module to adjuat the code to PEP8 standard
+- Use autopep8 module to format the code according to PEP8 standard
 - Use pylint linter to improve quality of the code
 
 
