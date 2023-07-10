@@ -9,7 +9,7 @@ The project aims at predicting customer churn for banking customers. This is a c
 - Train two classification models (sklearn random forest and logistic regression) - Random forest has better performance than logistic regression in this case
 - Identify most important features influencing the predictions and visualize their impact using SHAP library
 - Save best models with their performance metrics
-- Use autopep8 module to adjuat the code to PEP8 standard
+- Use autopep8 module to format the code according to PEP8 standard
 - Use pylint linter to improve quality of the code
 
 
@@ -20,7 +20,6 @@ The project aims at predicting customer churn for banking customers. This is a c
   - processed/               # Processed data
   - external/                # External data (optional)
 - models/                    # Model artifacts and related files
-- notebooks/                 # Jupyter notebooks for exploration and experimentation
 - src/                       # Source code directory
   - data/                    # Data-related code
     - preprocessing/         # Data preprocessing scripts and modules
@@ -87,3 +86,20 @@ we can use command ipython churn_library.py, to run the code below  __name__ == 
 It Contain unit tests for the churn_library.py functions. Used assert statements to test functions and make sure it work properly. Testing and logging can be completed on the command line i.e running the below code in the terminal should test each of the functions and provide any errors to a file stored in the /logs folder.
 
 pytest churn_script_logging_and_tests.py
+
+## Additional setup
+#### CICD pipeline:
+- It includes github actions pipeline to deploy the project
+    - config        --> prepares and exports environment variables that can be used in different jobs
+    - build        --> steps required to build the project can be performed in this job, eg. compile, generate minified files etc
+    - test        --> steps to test the project can be performed in this job eg. pylint and pytest activites
+    - deploy          --> steps required to deploy project on multiple environments(test, staging, production etc) can be performed in this job
+    - announcement          --> once deployement is successfull on production, we can notify people on certain notification channels eg. slack or jira or email
+
+#### Pull request template:
+- It helps developers to create great pull request descriptions that meets the organization's standards
+- pull_request_template.md contains a template which is used whenever new pull requirest is created and developers should
+fill in the details before asking anyone for the code review
+
+#### Pre-commit hook:
+- .pre-commit-config.yaml includes what should happen before a successfull commit
