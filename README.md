@@ -20,7 +20,6 @@ The project aims at predicting customer churn for banking customers. This is a c
   - processed/               # Processed data
   - external/                # External data (optional)
 - models/                    # Model artifacts and related files
-- notebooks/                 # Jupyter notebooks for exploration and experimentation
 - src/                       # Source code directory
   - data/                    # Data-related code
     - preprocessing/         # Data preprocessing scripts and modules
@@ -88,7 +87,8 @@ It Contain unit tests for the churn_library.py functions. Used assert statements
 
 pytest churn_script_logging_and_tests.py
 
-#### CICD pipeline
+## Additional setup
+#### CICD pipeline:
 - It includes github actions pipeline to deploy the project
     - config        --> prepares and exports environment variables that can be used in different jobs
     - build        --> steps required to build the project can be performed in this job, eg. compile, generate minified files etc
@@ -96,10 +96,10 @@ pytest churn_script_logging_and_tests.py
     - deploy          --> steps required to deploy project on multiple environments(test, staging, production etc) can be performed in this job
     - announcement          --> once deployement is successfull on production, we can notify people on certain notification channels eg. slack or jira or email
 
-#### Pull request template
+#### Pull request template:
 - It helps developers to create great pull request descriptions that meets the organization's standards
 - pull_request_template.md contains a template which is used whenever new pull requirest is created and developers should
 fill in the details before asking anyone for the code review
 
-#### Pre-commit hook
+#### Pre-commit hook:
 - .pre-commit-config.yaml includes what should happen before a successfull commit
